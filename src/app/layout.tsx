@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Find Top Colleges & Universities in India by Ranking & Location. Get Detailed Information on College Admissions, Exams, Courses, Fees, Cutoff, Placements, and Latest News.",
 };
 
+import AIAssistant from '@/components/AIAssistant';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,9 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased font-sans`}
+        className={`${inter.variable} ${outfit.variable} font-sans antialiased`}
       >
         {children}
+        <AIAssistant />
       </body>
     </html>
   );

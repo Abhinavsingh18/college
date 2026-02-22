@@ -6,6 +6,7 @@ import FeaturedColleges from '@/components/FeaturedColleges'
 import TopExams from '@/components/TopExams'
 import LatestNews from '@/components/LatestNews'
 import Testimonials from '@/components/Testimonials'
+import AICareerCompass from '@/components/AICareerCompass'
 import Footer from '@/components/Footer'
 import { ArrowRight, CheckCircle2, MessageSquare, Award } from 'lucide-react'
 
@@ -49,6 +50,8 @@ export default function Home() {
       </div>
 
       <CategoryGrid />
+
+      <AICareerCompass />
 
       <TopExams />
 

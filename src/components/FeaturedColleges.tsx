@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Star, MapPin, ArrowRight } from 'lucide-react'
+import { Star, MapPin, ArrowRight, Sparkles } from 'lucide-react'
 import { colleges } from '@/data/mock'
 import Image from 'next/image'
 
@@ -35,15 +35,17 @@ const FeaturedColleges = () => {
                             className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500"
                         >
                             {/* College Image */}
-                            <div className="relative h-56 overflow-hidden">
-                                <img
-                                    src={college.image}
-                                    alt={college.name}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                            <div className="relative h-64 overflow-hidden">
+                                <img src={college.image} alt={college.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-white/10 shadow-lg">
+                                    <div className="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center">
+                                        <Sparkles className="text-primary" size={10} />
+                                    </div>
+                                    <span className="text-[10px] font-bold text-white uppercase tracking-wider">98% AI Match</span>
+                                </div>
+                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg flex items-center gap-1">
                                     <Star className="text-yellow-400 fill-yellow-400" size={14} />
-                                    <span className="text-xs font-bold text-slate-800">{college.rating}</span>
+                                    <span className="text-xs font-bold text-slate-900">{college.rating}</span>
                                 </div>
                                 <div className="absolute bottom-4 left-4">
                                     <span className="bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">

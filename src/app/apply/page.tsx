@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { CheckCircle2, ArrowRight, ArrowLeft, GraduationCap, MapPin, User, Phone, Mail, BookOpen } from 'lucide-react'
+import { CheckCircle2, ArrowRight, ArrowLeft, GraduationCap, MapPin, User, Phone, Mail, BookOpen, Sparkles } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -131,6 +131,28 @@ const MultiStepForm = () => {
                 </div>
 
                 <div className="bg-white rounded-[3rem] shadow-2xl p-8 lg:p-12 border border-slate-100 relative overflow-hidden">
+                    {/* AI Strength Meter */}
+                    <div className="absolute top-6 right-8 hidden md:flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        <div className="text-right">
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">AI Profile Strength</p>
+                            <p className="text-lg font-bold text-primary">{Math.round((step / totalSteps) * 100)}%</p>
+                        </div>
+                        <div className="relative w-12 h-12 flex items-center justify-center">
+                            <svg className="w-full h-full -rotate-90">
+                                <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" strokeWidth="4" className="text-slate-200" />
+                                <motion.circle
+                                    cx="24" cy="24" r="20" fill="none" stroke="currentColor" strokeWidth="4"
+                                    className="text-primary"
+                                    strokeDasharray="125.6"
+                                    initial={{ strokeDashoffset: 125.6 }}
+                                    animate={{ strokeDashoffset: 125.6 - (125.6 * (step / totalSteps)) }}
+                                    transition={{ duration: 0.8 }}
+                                />
+                            </svg>
+                            <Sparkles className="absolute text-primary animate-pulse" size={16} />
+                        </div>
+                    </div>
+
                     <div className="absolute top-0 right-0 p-8 opacity-5">
                         <GraduationCap size={200} />
                     </div>

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, GraduationCap, MapPin, BookOpen, Clock, ArrowRight } from 'lucide-react'
+import { Search, GraduationCap, MapPin, BookOpen, Clock, ArrowRight, Sparkles } from 'lucide-react'
 import { colleges } from '@/data/mock'
 
 const Hero = () => {
@@ -51,7 +51,10 @@ const Hero = () => {
                     <div className="relative max-w-2xl group">
                         <div className="bg-white p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center gap-2 transition-all focus-within:ring-4 focus-within:ring-primary/20">
                             <div className="flex-1 flex items-center gap-3 px-4 w-full border-r border-slate-100 last:border-0 border-none md:border-solid">
-                                <Search className="text-slate-400" size={20} />
+                                <div className="relative">
+                                    <Search className="text-slate-400" size={20} />
+                                    <Sparkles className="absolute -top-1 -right-1 text-primary animate-pulse" size={10} />
+                                </div>
                                 <input
                                     type="text"
                                     value={searchQuery}
@@ -60,7 +63,7 @@ const Hero = () => {
                                         setShowResults(e.target.value.length > 0)
                                     }}
                                     onFocus={() => setShowResults(searchQuery.length > 0)}
-                                    placeholder="Search colleges, exams, courses..."
+                                    placeholder="Ask our AI: Best colleges for Engineering..."
                                     className="w-full py-4 text-slate-800 outline-none placeholder:text-slate-400"
                                 />
                             </div>
